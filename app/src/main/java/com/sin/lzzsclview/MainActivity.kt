@@ -3,6 +3,7 @@ package com.sin.lzzsclview
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.sin.lzzsclview.entity.ChessCK
 import com.sin.lzzsclview.entity.ChessLuna
 
 import com.sin.lzzsclview.view.LzzsclView
@@ -17,6 +18,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+
+        val chessBoard = CheckerBoard()
+        chessBoard.put(ChessLuna())
+        chessBoard.put(ChessLuna())
+        chessBoard.put(ChessLuna())
+        chessBoard.put(ChessCK())
+
+
     }
 
     private fun initView() {

@@ -8,15 +8,16 @@ import com.sin.lzzsclview.config.ChessConfig
 
 abstract class Chess(chessName: String) {
 
-    var chessId : Int = 0
+//    var chessId : Int = 0
 
     var chessName: String? = null
     var race1: String? = null
     var race2: String? = null
     var profession: String? = null
     var level: Int = 0
+    var starts : Int = 1
     var skill1: String? = null
-    var skille2: String? = null
+    var skill2: String? = null
 
 
     companion object {
@@ -32,8 +33,9 @@ abstract class Chess(chessName: String) {
         this.race2 = chess.race2
         this.profession = chess.profession
         this.level = chess.level
+        this.starts = chess.starts
         this.skill1 = chess.skill1
-        this.skille2 = chess.skill2
+        this.skill2 = chess.skill2
     }
 
     override fun equals(other: Any?): Boolean {
@@ -42,10 +44,16 @@ abstract class Chess(chessName: String) {
 
         other as Chess
 
-        if (chessId != other.chessId) return false
+//        if (chessId != other.chessId) return false
         if (chessName != other.chessName) return false
-
+        if (level != other.level) return false
+        if (starts != other.starts) return false
         return true
     }
+
+    override fun toString(): String {
+        return "Chess(chessName=$chessName, race1=$race1, race2=$race2, profession=$profession, level=$level, starts=$starts, skill1=$skill1, skill2=$skill2)"
+    }
+
 
 }
